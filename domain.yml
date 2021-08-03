@@ -1,0 +1,126 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - buyfood
+  - howmuchfood
+  - search_restaurant
+  - mood_disappointed
+  - place_search
+  - opening_hours
+  - address
+  - rating
+  - inform
+  - thanks
+  - first_name
+  - last_name
+  - feedback
+actions:
+  - action_search_restaurant
+  - utter_greet
+  - utter_goodbye
+  - utter_thanks
+  - utter_what_radius
+  - utter_rating
+  - utter_opening_hours
+  - utter_address
+  - utter_no_results
+  - utter_first_name
+  - utter_last_name
+  - utter_feedback
+  - utter_submit
+  - action_place_search
+  - action_last_name
+  - action_feedback
+  - action_submit
+  - utter_thanks_ask_feedback
+
+slots:
+    query:
+      type: text
+    number:
+      type: text
+    rating:
+      type: float
+      influence_conversation: true
+    address:
+      type: text
+      influence_conversation: true
+    opening_hours:
+      type: text
+      influence_conversation: true
+    location_match:
+      type: categorical
+      values:
+        - none
+        - one
+    firstN:
+      type: text
+      influence_conversation: true
+    lastN:
+      type: text
+      influence_conversation: true
+    feedback:
+      type: text
+      influence_conversation: true
+entities:
+  - national
+  - query
+  - number
+  - firstname
+  - lastname
+  - feedback
+responses:
+  utter_greet:
+  - text: "Hello! I am a place search assistant. Provide information about the location like opening hours, rating, address. So what are you looking for?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  utter_buyfood:
+   - text: "How much do you want to buy?"
+  utter_howmuch:
+  - text: "Yes, they are available, you can order it now"
+  utter_thanks:
+    - text: "No Problem!"
+  utter_thanks_ask_feedback:
+    - text: "You are very welcome. Do you have any feedback for me? Be honest! Don't be nice!"
+  utter_what_radius:
+    - text: "Within what radius?"
+  utter_rating:
+    - text: "The rating is {rating}"
+  utter_address:
+    - text: "The address is {address}."
+  utter_opening_hours:
+    - text: "The place is {opening_hours}"
+  utter_no_results:
+    - text: "Sorry, I couldn't find anything."
+  utter_first_name:
+    - text: "Please provide your first name"
+  utter_last_name:
+    - text: "Please provide your last name"
+  utter_feedback:
+    - text: "Please provide your feedback: bad, good, or excellent"
+  utter_submit:
+    - text: "Your full name is {firstname} {lastname} with the feedback {feedback}. I saved your feedback and Thank you!"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

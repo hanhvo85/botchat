@@ -1,0 +1,237 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: buy food
+  steps:
+    - intent: buyfood
+    - action: utter_buyfood
+    - intent: howmuchfood
+    - action: utter_howmuch
+
+- story: search restaurant
+  steps:
+    - intent: search_restaurant
+    - action: action_search_restaurant
+    - intent: mood_disappointed
+    - action: utter_goodbye
+- story: location_search_full
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: place_search
+      entities:
+          - query
+          - number
+    - action: action_place_search
+    - slot_was_set:
+        - location_match: "one"
+        - rating: "4.5"
+        - address: "Alexanderplatz 15"
+        - opening_hours: "open"
+    - intent: address
+    - action: utter_address
+    - intent: rating
+    - action: utter_rating
+    - intent: opening_hours
+    - action: utter_opening_hours
+    - intent: thanks
+    - action: utter_thanks_ask_feedback
+    - checkpoint: check_ask_feedback
+- story: location_search_address
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: place_search
+      entities:
+          - query
+          - number
+    - action: action_place_search
+    - slot_was_set:
+        - location_match: "one"
+        - rating: "4.5"
+        - address: "Alexanderplatz 15"
+        - opening_hours: "open"
+    - intent: address
+    - action: utter_address
+    - intent: thanks
+    - action: utter_thanks_ask_feedback
+    - checkpoint: check_ask_feedback
+- story: location_search_rating
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: place_search
+      entities:
+          - query
+          - number
+    - action: action_place_search
+    - slot_was_set:
+        - location_match: "one"
+        - rating: "4.5"
+        - address: "Alexanderplatz 15"
+        - opening_hours: "open"
+    - intent: rating
+    - action: utter_rating
+    - intent: address
+    - action: utter_address
+    - intent: opening_hours
+    - action: utter_opening_hours
+    - intent: thanks
+    - action: utter_thanks_ask_feedback
+    - checkpoint: check_ask_feedback
+- story: location_search_open
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: place_search
+      entities:
+          - query
+          - number
+    - action: action_place_search
+    - slot_was_set:
+        - location_match: "one"
+        - rating: "4.5"
+        - address: "Alexanderplatz 15"
+        - opening_hours: "open"
+    - intent: opening_hours
+    - action: utter_opening_hours
+    - intent: address
+    - action: utter_address
+    - intent: rating
+    - action: utter_rating
+    - intent: thanks
+    - action: utter_thanks_ask_feedback
+    - checkpoint: check_ask_feedback
+- story: location_search_inform_full
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: place_search
+      entities:
+          - query
+    - action: utter_what_radius
+    - intent: inform
+      entities:
+          - number
+    - action: action_place_search
+    - slot_was_set:
+        - location_match: "one"
+        - rating: "4.5"
+        - address: "Alexanderplatz 15"
+        - opening_hours: "open"
+    - intent: address
+    - action: utter_address
+    - intent: rating
+    - action: utter_rating
+    - intent: opening_hours
+    - action: utter_opening_hours
+    - intent: thanks
+    - action: utter_thanks_ask_feedback
+    - checkpoint: check_ask_feedback
+
+- story: location_search_inform_address
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: place_search
+      entities:
+          - query
+    - action: utter_what_radius
+    - intent: inform
+      entities:
+          - number
+    - action: action_place_search
+    - slot_was_set:
+        - location_match: "one"
+        - rating: "4.5"
+        - address: "Alexanderplatz 15"
+        - opening_hours: "open"
+    - intent: address
+    - action: utter_address
+    - intent: thanks
+    - action: utter_thanks_ask_feedback
+    - checkpoint: check_ask_feedback
+
+- story: location_search_inform_open
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: place_search
+      entities:
+          - query
+    - action: utter_what_radius
+    - intent: inform
+      entities:
+          - number
+    - action: action_place_search
+    - slot_was_set:
+        - location_match: "one"
+        - rating: "4.5"
+        - address: "Alexanderplatz 15"
+        - opening_hours: "open"
+    - intent: opening_hours
+    - action: utter_opening_hours
+    - intent: address
+    - action: utter_address
+    - intent: thanks
+    - action: utter_thanks_ask_feedback
+    - checkpoint: check_ask_feedback
+
+
+- story: affirm_feedback
+  steps:
+    - checkpoint: check_ask_feedback
+    - intent: affirm
+    - action: utter_first_name
+    - intent: first_name
+      entities:
+        - firstname
+    - slot_was_set:
+        - firstN: "Mia"
+    - action: action_last_name
+    - intent: last_name
+      entities:
+        - lastname
+    - slot_was_set:
+        - lastN: "Smith"
+    - action: action_feedback
+    - intent: feedback
+      entities:
+        - feedback
+    - slot_was_set:
+        - feedback: "Good"
+    - action: action_submit
+
+- story: deny
+  steps:
+    - checkpoint: check_ask_feedback
+    - intent: deny
+    - action: utter_thanks

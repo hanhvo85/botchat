@@ -1,0 +1,245 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - hey
+    - heya
+    - Hello
+    - What's up
+    - Heya
+    - Greetings
+    - Good morning
+    - Good afternoon
+    - Good evening
+    - Hey sir
+    - Hi person
+    - Hey robot
+    - Hello bot
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you
+    - Thanks a lot
+    - Thanks a bunch
+    - Thank you very much
+    - Thank you so much
+
+- intent: buyfood
+  examples: |
+    - I want to buy some brocoli
+    - I want to buy some cheese
+- intent: howmuchfood
+  examples: |
+    - 2kg
+    - 100g
+    - 5kg
+    - 500g
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: mood_disappointed
+  examples: |
+    - okay
+    - okay, I will be back
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: search_restaurant
+  examples: |
+    - show me [Vietnamese](national) restaurants
+    - show me [Indian](national) restaurants
+    - show me [Canadian](national) restaurants
+- intent: place_search
+  examples: |
+    - I am looking for a [restaurant](query) within distance [700](number) meters
+    - Looking for a [restaurant](query)
+    - Is there any [restaurant](query) within [700](number) meters?
+    - I am looking for a [movie_theater](query) within distance [700](number) meters
+    - Is there any [movie_theater](query) within [700](number) meters?
+    - Looking for a [movie_theater](query)
+    - I am looking for a [supermarket](query) within distance [700](number) meters
+    - Is there any [supermarket](query) within [700](number) meters?
+    - Looking for a [supermarket](query)
+    - I am looking for a [beauty_salon](query) within distance [200](number) meters
+    - Looking for a [beauty_salon](query)
+    - I am looking for a [subway_station](query) within distance [200](number) meters
+    - Looking for a [subway_station](query)
+    - I am looking for a [bank](query) within distance [200](number) meters
+    - Looking for a [bank](query)
+    - I am looking for a [hospital](query) within distance [200](number) meters
+    - Looking for a [hospital](query)
+    - I am looking for a [gas_station](query) within distance [200](number) meters
+    - Looking for a [gas_station](query)
+    - I am looking for a [fire_station](query) within distance [200](number) meters
+    - Looking for a [fire_station](query)
+    - I am looking for a [gym](query) within distance [200](number) meters
+    - Looking for a [gym](query)
+    - I am looking for a [amusement_park](query) within distance [200](number) meters
+    - Looking for a [amusement_park](query)
+    - I am looking for a [park](query) within distance [200](number) meters
+    - Looking for a [park](query)
+    - I am looking for a [cafe](query) within distance [200](number) meters
+    - Looking for a [cafe](query)
+    - I am looking for a [car_dealer](query) within distance [200](number) meters
+    - Looking for a [car_dealer](query)
+    - I am looking for a [church](query) within distance [200](number) meters
+    - Looking for a [church](query)
+    - I am looking for a [post_office](query) within distance [200](number) meters
+    - Looking for a [post_office](query)
+    - I am looking for a [dentist](query) within distance [200](number) meters
+    - Looking for a [dentist](query)
+    - I am looking for a [doctor](query) within distance [200](number) meters
+    - Looking for a [doctor](query)
+    - I am looking for a [drugstore](query) within distance [200](number) meters
+    - Looking for a [drugstore](query)
+    - I am looking for a [florist](query) within distance [200](number) meters
+    - Looking for a [florist](query)
+    - I am looking for a [furniture_store](query) within distance [200](number) meters
+    - Looking for a [furniture_store](query)
+    - I am looking for a [laundry](query) store within distance [200](number) meters
+    - Looking for a [laundry](query) store
+    - I am looking for a [university](query) within distance [200](number) meters
+    - Looking for a [university](query)
+    - I am looking for a [secondary_school](query) within distance [200](number) meters
+    - Looking for a [secondary_school](query)
+
+
+
+
+- intent: opening_hours
+  examples: |
+    - Is it still open?
+    - Is it open at the moment?
+    - Is it working?
+    - Is it open today?
+    - If I go there now, is it still open?
+    - Can you tell me if it's open at the moment?
+    - Tell me if it's open.
+    - Is the place open today?
+    - Is the place still open today?
+- intent: address
+  examples: |
+    - Where is it?
+    - What's the address?
+    - Can you tell me the address?
+    - Where is the place?
+    - What is the location of it?
+    - Where about is it?
+    - Can you please tell me the actual address?
+    - Does it take long to get there?
+    - Does it take a long time to get to the place?
+    - I am wondering how long does it take to get to the location?
+    - What is the address of this place?
+    - Where is this place?
+    - What is an actual address?
+- intent: rating
+  examples: |
+    - What is the rating of this place?
+    - Does it have a good rating?
+    - Tell me the rating
+    - Do you know the rating of this place?
+    - What rating does it have?
+    - I want to know the rating
+- intent: inform
+  examples: |
+    - [10](number) meters
+    - [100](number) meters
+    - [1500](number) meters
+    - around [100](number)
+    - let's say [50](number) meters
+    - within [15](number) meters
+    - within [25](number) meters from here
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: first_name
+  examples: |
+    - My first name is [Mia](firstname)
+    - [Mia](firstname)
+    - [Hanh](firstname)
+    - [Sandeep](firstname)
+    - [Manpreet](firstname)
+    - [Rekha](firstname)
+    - [Aman](firstname)
+    - [Jayesh](firstname)
+
+- intent: last_name
+  examples: |
+    - My last name is [Smith](lastname)
+    - [Smith](lastname)
+    - [Vo](lastname)
+    - [Singh](lastname)
+    - [Kaur](lastname)
+    - [Raina](lastname)
+    - [Shukla](lastname)
+    - [Chhelar](lastname)
+- intent: feedback
+  examples: |
+    - [good](feedback)
+    - [bad](feedback)
+    - [excellent](feedback)
