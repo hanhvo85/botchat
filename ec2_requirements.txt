@@ -207,7 +207,6 @@ requests==2.21.0
 requests-toolbelt==0.8.0
 rocketchat-API==0.6.25
 rope==0.11.0
-ruamel-yaml==0.15.46
 ruamel.yaml==0.15.87
 s3transfer==0.1.13
 scikit-image==0.14.1
