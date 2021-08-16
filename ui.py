@@ -66,7 +66,7 @@ def press():
 
             # response from bot
             #url = 'http://localhost:5005/webhooks/rest/webhook'
-            url = 'http://https://chatroboapp.herokuapp.comS/webhooks/rest/webhook'
+            url = 'http://https://chatroboapp.herokuapp.com/webhooks/rest/webhook'
             # url = 'http://localhost:5055/webhook'
             myobj = {
                 "message": msg,
